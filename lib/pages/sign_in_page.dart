@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:provider/provider.dart';
+import 'package:watch_list/services/google_signin.dart';
 import 'package:watch_list/styles/text_theme.dart';
 import 'package:watch_list/widgets/app_bar.dart';
 
@@ -16,8 +19,8 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          tittle: "Update Profile",
-          backButton: true,
+          tittle: "SignIn Bro",
+          backButton: false,
         ),
         body: Container(
           child: Column(
@@ -32,7 +35,17 @@ class _SignInPageState extends State<SignInPage> {
               Expanded(
                   flex: 1,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      // await _googleSignin.signIn();
+                      // setState(() {});
+
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.googleLogin();
+                      // print("FFFFF ${provider.user.displayName}");
+                      // print("FFFF" + provider.user.displayName!);
+                    },
                     icon: const FaIcon(FontAwesomeIcons.google),
                     label: const Text(
                       "Signin bro",

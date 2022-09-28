@@ -29,7 +29,6 @@ class DefaultFirebaseOptions {
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for ios - '
           'you can reconfigure this by running the FlutterFire CLI again.',
-          
         );
       case TargetPlatform.macOS:
         throw UnsupportedError(
@@ -60,9 +59,4 @@ class DefaultFirebaseOptions {
     projectId: 'watchlist-22d05',
     storageBucket: 'watchlist-22d05.appspot.com',
   );
-
-
-  
-
-
 }
